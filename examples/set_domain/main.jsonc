@@ -1,0 +1,50 @@
+// This file contains the main inputs parameters for MFSim
+{
+    "Mesh":{
+        "Domain Mininum": [0.0, 0.0, 0.0],
+        "Domain Maximum": [1.0, 1.0, 1.0],
+        "Lbot Cells": [32, 32, 32],
+        "Levels above Lbot": 1,
+        "Refinement Ratio": 2,
+        "Fine Mesh Initial Topology": [
+            {
+                "Box Min": [0.3,0.3,0.2],
+                "Box Max": [0.5,0.7,0.8]
+            },{
+                "Box Min": [0.6,0.5,0.2],
+                "Box Max": [0.9,0.9,0.8]
+            }
+        ]
+    },
+    
+    "Regrid":{
+        "Frequency": 20,
+        "Buffer Zone": 2,
+        "Cut Off": 0.7
+    },
+
+    "Simulation Controls":{
+        "Maximum Iterations": -1,
+        "End Time": 2.0
+    },
+
+    "I/O":{
+        "Restart Files":{
+            "Number of Files": 2,
+            "File Prefix": "chk",
+            "Save by Iteration": 500,
+            "Save by Time": -1.0
+        },
+        "Output Files":{
+            "File Prefix": "plt",
+            "Save by Iteration": 50,
+            "Save by Time": -1.0,
+            "Print Variables": [
+                "Scalar",
+                "U","V","W",
+                "Pressure"
+            ]
+        }
+    }
+
+}
